@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">Lampe Torche</string>
+
+    <string name="tgl_btn_flash_on">вспышка ON</string>
+
+    <string name="tgl_btn_flash_off">вспышка OFF</string>
+
+    <string name="chk_box_sos_text">СОС</string>
+
+    <string name="btn_screen_text">экран</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">手电筒</string>
+
+    <string name="tgl_btn_flash_on">闪光灯 开</string>
+
+    <string name="tgl_btn_flash_off">闪光灯 关</string>
+
+   <string name="btn_screen_text">屏幕</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">Flashlight</string>
+
+    <string name="tgl_btn_flash_on">Flash ON</string>
+
+    <string name="tgl_btn_flash_off">Flash OFF</string>
+
+    <string name="chk_box_sos_text">SOS</string>
+
+    <string name="btn_screen_text">Screen</string>
+
+</resources>
