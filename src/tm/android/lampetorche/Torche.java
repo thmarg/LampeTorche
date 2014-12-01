@@ -5,10 +5,7 @@ import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.Bundle;
-import android.widget.CheckBox;
-import android.widget.Toast;
-import android.widget.ToggleButton;
-
+import android.widget.*;
 
 
 public class Torche extends Activity {
@@ -16,7 +13,7 @@ public class Torche extends Activity {
 	private boolean flashEnabled=false;
 
 	private static boolean modeSOS=false;
-
+	private static boolean flashOn=false;
 	private MorseRenderer morseRenderer;
 
 
@@ -28,13 +25,7 @@ public class Torche extends Activity {
 
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-		try {
-			camera = Camera.open(0);
-		} catch (RuntimeException e) {
-			Toast t = Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_LONG);
-			t.show();
-
-		}
+		initCamera();
 
 		if (camera != null && camera.getParameters().getFlashMode() != null) {
 
@@ -53,43 +44,52 @@ public class Torche extends Activity {
 			}
 
 		}
-		findViewById(R.id.tgl_btn_flash).setVisibility(flashEnabled ? View.VISIBLE : View.INVISIBLE);
+		/* if no flash remove the flash toggle button so the other component stay in the middle off the screen */
+		if (!flashEnabled){
+			LinearLayout layout = (LinearLayout)findViewById(R.id.layoutWrap);
+			layout.removeView(findViewById(R.id.tgl_btn_flash));
+		}
 		morseRenderer=new MorseRd();
 
 		SosWorker.Instance().execute();
 	}
 
-	/*
+
     protected void onStart() {
         super.onStart();
-         
+         if (flashEnabled && camera==null)
+			 initCamera();
 
     }
 
-	@Override
-    protected void onResume() {
-        super.onResume();
-        // The activity has become visible (it is now "resumed").
-
-    }
-
-	
-	@Override
-	protected void onPause() {
-		// Another activity is taking focus (this activity is about to be "paused").
-		super.onPause();
-
-	}
+//	@Override
+//    protected void onResume() {
+//        super.onResume();
+//        // The activity has become visible (it is now "resumed").
+//
+//    }
+//
+//
+//	@Override
+//	protected void onPause() {
+//		// Another activity is taking focus (this activity is about to be "paused").
+//		super.onPause();
+//
+//	}
 	
 	@Override
     protected void onStop() {
 		super.onStop();
-        // The activity is no longer visible (it is now "stopped")
-    }*/
+       if (!flashOn){
+		   // we must release the camera
+		   camera.release();
+		   camera=null;
+	   }
+    }
 
 	@Override
 	protected void onDestroy() {
-		if (flashEnabled) {
+		if (flashEnabled && flashOn) {
 			turnFlashOff();
 			camera.release();
 		}
@@ -99,6 +99,15 @@ public class Torche extends Activity {
 	}
 
 
+	private void initCamera(){
+		try {
+			camera = Camera.open(0);
+		} catch (RuntimeException e) {
+			Toast t = Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_LONG);
+			t.show();
+
+		}
+	}
 
 	public void onClick(View view){
 		switch (view.getId()){
@@ -135,12 +144,14 @@ public class Torche extends Activity {
 		Parameters cmParams = camera.getParameters();
 		cmParams.setFlashMode(Parameters.FLASH_MODE_OFF);
 		camera.setParameters(cmParams);
+		flashOn=false;
 	}
 
 	private void turnFlashOn(){
 			Parameters cmParams = camera.getParameters();
 			cmParams.setFlashMode(Parameters.FLASH_MODE_TORCH);
 			camera.setParameters(cmParams);
+			flashOn=true;
 	}
 	
 	private void startFlashSos(){
