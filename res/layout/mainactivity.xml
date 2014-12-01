@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/Rlayout_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" android:clickable="false" android:gravity="center_vertical"
-        >
-
+    android:id="@+id/layout_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:clickable="false"
+    android:layout_alignParentBottom="true"
+    android:gravity="center">
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/layoutWrap">
     <ToggleButton
         android:id="@+id/tgl_btn_flash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:onClick="onClick"
         android:textOff="@string/tgl_btn_flash_off"
         android:textOn="@string/tgl_btn_flash_on"
-        android:layout_marginBottom="25dp" android:textSize="20sp" android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="25dp" android:textSize="20sp"
         android:textColor="?android:attr/textColorHighlight"
             />
 
     <Button
         android:id="@+id/btn_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:onClick="onClick"
         android:text="@string/btn_screen_text"
-        android:textColorLink="@android:color/black" android:layout_gravity="center_horizontal"
+        android:textColorLink="@android:color/black"
         android:layout_marginBottom="25dp" android:textSize="20sp"
         android:textColor="?android:attr/textColorHighlight"/>
 
     <CheckBox
         android:id="@+id/chk_box_sos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:onClick="onClick"
         android:text="@string/chk_box_sos_text"
         android:textColor="?android:attr/textColorHighlight"
-        android:layout_gravity="center_horizontal"
         android:textSize="20sp"/>
+</LinearLayout>
 </LinearLayout>
