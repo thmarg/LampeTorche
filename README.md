@@ -29,7 +29,7 @@
 
 ####System requirement
 <ul>
-<li>Minimum API level : 8 (plateform version 2.2.x, version code Froyo).</li>
+<li>Minimum API level : 9 (plateform version 2.3 to 2.3.2, version code GINGERBREAD).</li>
 <li>Permission : Camera, not mandatory</li>
 <li>Feature : Flash, not mandatory.</li>
 </ul>
