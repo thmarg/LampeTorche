@@ -1,3 +1,9 @@
+/**
+ *  SosWorker
+ *
+ *  Copyright (c) 2014 Thierry Margenstern under MIT license
+ *  http://opensource.org/licenses/MIT
+ */
 package tm.android.lampetorche;
 
 
@@ -5,7 +11,11 @@ import android.os.AsyncTask;
 
 import java.util.ArrayList;
 
-public class SosWorker extends AsyncTask<Void,MorseRenderer,Void> implements MorseAction
+/**
+ * @see tm.android.lampetorche.Morse
+ *
+ * */
+public class SosWorker extends AsyncTask<Void,Void,Void> implements MorseAction
 {
     private static  SosWorker _instance;
     private boolean run =true;
@@ -31,7 +41,7 @@ private SosWorker(){
                         Thread.sleep(100);
                         continue;
                     }
-                    Morse.doWord("SOS", this);
+                    Morse.doWords("SOS", this);
                 }
             } catch (InterruptedException e) {
                // e.printStackTrace();
@@ -41,7 +51,7 @@ private SosWorker(){
     }
 
     @Override
-    protected void onProgressUpdate(MorseRenderer... values) {
+    protected void onProgressUpdate(Void... progress) {
             for(MorseRenderer renderer : renderers)
                 renderer.render(currentAction);
 
