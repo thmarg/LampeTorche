@@ -1,3 +1,9 @@
+/**
+ *  ScreenActivity
+ *
+ *  Copyright (c) 2014 Thierry Margenstern under MIT license
+ *  http://opensource.org/licenses/MIT
+ */
 package tm.android.lampetorche;
 
 
@@ -7,6 +13,10 @@ import android.view.WindowManager;
 import android.app.Activity;
 import android.os.Bundle;
 
+/**
+ * This activity make a flash light with the screen:<br>
+ *    white and max brightness.
+ */
 public class ScreenActivity extends Activity  {
 
 	private MorseRenderer morseRenderer;
@@ -63,7 +73,11 @@ public class ScreenActivity extends Activity  {
 
 	}
 
-
+	/**
+	 * render morse action. Easy here to update the UI.
+	 * The render void must be call from onProgressUpdate(...) in an AsyncTask
+	 * because this o,Progress... void run on the UI thread, and Android UI is not thread safe.
+	 */
 	private class MorseRd implements MorseRenderer {
 
 
