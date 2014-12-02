@@ -4,11 +4,11 @@
 #### The goal of this Android application is to provide a simple flashlight for Android devices and no more.
 <ul>
 
-  <li>If the divice has a camera with a flash you can use it as a flashlight . Simply push the toggle button "Flash off".
+  <li>If the device has a camera with a flash you can use it as a flashlight . Simply push the toggle button "Flash off".
   Once activated the flash will remain on until you push again the toggle button "Flash on". So you can navigate to other 
-  application with the flash on.</li><br>
+  applications with the flash on.</li><br>
   
-  <li>If the device as no flash you can use the screen button, a white screen at max brightness will be dispalyed. Less light
+  <li>If the device as no flash you can use the screen button, a white screen at max brightness will be displayed. Less light
   than camera flash but still useful at short distance.</li><br>
   
   <li>An original extra feature is implemented : a light morse displaying SOS.
@@ -29,7 +29,7 @@
 
 ####System requirement
 <ul>
-<li>Minimum API level : 9 (plateform version 2.3 to 2.3.2, version code GINGERBREAD).</li>
+<li>Minimum API level : 14 (platform version 4.0, 4.0.1 and 4.0.2, version code ICE_CREAM_SANDWICH).</li>
 <li>Permission : Camera, not mandatory</li>
 <li>Feature : Flash, not mandatory.</li>
 </ul>
@@ -37,7 +37,7 @@
 This permission and this feature are mandatory to access the camera flash, but only the flash is used, neither photos nor 
 movies are taken.
 
-It seems to work on the latest Lollipop version code dispite the fact that the camera api used is deprecated at this 
+It seems to work on the latest Lollipop version code despite the fact that the camera api used is deprecated at this
 Lollipop api level (21) and replaced by camera2 api. Only tested on emulator.
 
 
@@ -49,7 +49,7 @@ Lollipop api level (21) and replaced by camera2 api. Only tested on emulator.
 
 Enjoy !
 
-The prefered installation location is SD card.
+The preferred installation location is SD card.
 
 
   
