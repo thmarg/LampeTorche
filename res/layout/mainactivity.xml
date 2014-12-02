@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--mainactivity.xml-->
+<!--Copyright (c) 2014 Thierry Margenstern under MIT license-->
+<!--http://opensource.org/licenses/MIT-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_main"
     android:layout_width="fill_parent"

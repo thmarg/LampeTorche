@@ -1,5 +1,7 @@
 <resources>
-
+    <!--strings.xml-->
+    <!--Copyright (c) 2014 Thierry Margenstern under MIT license-->
+    <!--http://opensource.org/licenses/MIT-->
     <string name="app_name">手电筒</string>
 
     <string name="tgl_btn_flash_on">闪光灯 开</string>
