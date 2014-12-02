@@ -1,3 +1,11 @@
+/**
+ *  Torche
+ *
+ *  Copyright (c) 2014 Thierry Margenstern under MIT license
+ *  http://opensource.org/licenses/MIT
+ */
+
+
 package tm.android.lampetorche;
 import android.view.*;
 import android.app.Activity;
@@ -7,7 +15,9 @@ import android.hardware.Camera.Parameters;
 import android.os.Bundle;
 import android.widget.*;
 
-
+/**
+ *  This is the main activity of the application Lampe Torche (flashlight).
+ */
 public class Torche extends Activity {
 	private Camera camera;
 	private boolean flashEnabled=false;
@@ -22,6 +32,7 @@ public class Torche extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.mainactivity);
+
 
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -49,14 +60,17 @@ public class Torche extends Activity {
 			LinearLayout layout = (LinearLayout)findViewById(R.id.layoutWrap);
 			layout.removeView(findViewById(R.id.tgl_btn_flash));
 		}
+
 		morseRenderer=new MorseRd();
 
+		// start the sosWorker.
 		SosWorker.Instance().execute();
 	}
 
 
     protected void onStart() {
         super.onStart();
+		// must we init the camera again ?
          if (flashEnabled && camera==null)
 			 initCamera();
 
@@ -80,7 +94,7 @@ public class Torche extends Activity {
 	@Override
     protected void onStop() {
 		super.onStop();
-       if (!flashOn){
+       if (flashEnabled && !flashOn){
 		   // we must release the camera
 		   camera.release();
 		   camera=null;
@@ -89,10 +103,12 @@ public class Torche extends Activity {
 
 	@Override
 	protected void onDestroy() {
+		// if needed turn flash of and release camera
 		if (flashEnabled && flashOn) {
 			turnFlashOff();
 			camera.release();
 		}
+		// stop the sosworker.
 		SosWorker.Instance().stop();
 
 		super.onDestroy();
@@ -204,21 +220,26 @@ public class Torche extends Activity {
 	}
 
 
+	/**
+	 *  render morse action, this could have been call from a simple thread
+	 *  because the flash is not part of the UI and is then thread safe.
+	 *  But for uniformity behavior with ScreenActivity rendering it fallow the
+	 *  same pattern.
+	 */
+	private class MorseRd implements MorseRenderer {
 
-private class MorseRd implements MorseRenderer {
-
-	@Override
-	public void render(MorseAction.morseAction morseAction) {
-		switch (morseAction) {
-			case LOUD:
-				turnFlashOn();
-				break;
-			case SILENCE:
-				turnFlashOff();
-				break;
+		@Override
+		public void render(MorseAction.morseAction morseAction) {
+			switch (morseAction) {
+				case LOUD:
+					turnFlashOn();
+					break;
+				case SILENCE:
+					turnFlashOff();
+					break;
+			}
 		}
 	}
-}
 
 
 }
