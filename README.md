@@ -42,14 +42,12 @@ Lollipop api level (21) and replaced by camera2 api. Only tested on emulator.
 
 
 #### Install on device
-1. Download LampeTorche.apk.
-2. Push it on your device
-3. Touch the file 
-4. Touch install
+
+The preferred installation location is SD card.
 
 Enjoy !
 
-The preferred installation location is SD card.
+
 
 
   
