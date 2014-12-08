@@ -42,7 +42,7 @@ Lollipop api level (21) and replaced by camera2 api. Only tested on emulator.
 
 
 #### Install on device
-
+Google play : [Lampe Torche](https://play.google.com/store/apps/details?id=tm.android.lampetorche)<br>
 The preferred installation location is SD card.
 
 Enjoy !
