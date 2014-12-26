@@ -160,6 +160,7 @@ public class Torche extends Activity {
 		Parameters cmParams = camera.getParameters();
 		cmParams.setFlashMode(Parameters.FLASH_MODE_OFF);
 		camera.setParameters(cmParams);
+		if (!modeSOS)
 		flashOn=false;
 	}
 
