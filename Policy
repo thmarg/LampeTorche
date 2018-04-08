@@ -1,5 +1,5 @@
 Application Android LampeTorche - 2018
 Before Android M the permision CAMERA is Mandatory to acces the FlashLigth.
 The Application Android LampeTorche use this permission to access the Flashlight and only the Flashlight.
-The Application Android LampeTorche does not take photos and don't look for user data.
+The Application Android LampeTorche don't take photos, don't look for and don't use user data.
 
