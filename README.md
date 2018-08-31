@@ -24,13 +24,18 @@
     <li>Russian</li>
   </ul>
   
-  
+### Android version
+<ul>
+  <li> master branch:  Android API 14 up to 22 (Lollipop)<li>
+  <li> androidM branch:  Android API 23 (Marshmallow) and above, use camera2<li>
+  </ul>
+
 ### Installation
 
 ####System requirement
 <ul>
 <li>Minimum API level : 14 (platform version 4.0, 4.0.1 and 4.0.2, version code ICE_CREAM_SANDWICH).</li>
-<li>Permission : Camera, not mandatory</li>
+<li>Permission : Camera, not mandatory, only for Android Lollipop and below</li>
 <li>Feature : Flash, not mandatory.</li>
 </ul>
 
