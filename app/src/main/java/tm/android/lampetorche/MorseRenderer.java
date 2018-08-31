@@ -1,4 +1,4 @@
-/**
+/*
  *  MorseRenderer
  *
  *  Copyright (c) 2014 Thierry Margenstern under MIT license

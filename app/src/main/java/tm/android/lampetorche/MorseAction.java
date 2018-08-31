@@ -1,4 +1,4 @@
-/**
+/*
  *  MorseAction
  *
  *  Copyright (c) 2014 Thierry Margenstern under MIT license
@@ -8,7 +8,7 @@ package tm.android.lampetorche;
 
 /**
  * To be notified of morse action (dot or dash)
- * @see tm.android.lampetorche.Morse
+ * @see Morse
  * @see tm.android.lampetorche.SosWorker
  */
 public interface MorseAction {

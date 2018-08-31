@@ -1,17 +1,16 @@
 <!--AndroidManifest.xml-->
-<!--Copyright (c) 2014 Thierry Margenstern under MIT license-->
+<!--Copyright (c) 2014-2018 Thierry Margenstern under MIT license-->
 <!--http://opensource.org/licenses/MIT-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="tm.android.lampetorche"
-          android:versionCode="2"
-          android:versionName="1.1.1"
+          android:versionCode="4"
+          android:versionName="2.1"
           android:installLocation="preferExternal">
 
 
-    <uses-sdk android:minSdkVersion="14"/>
+    <uses-sdk android:minSdkVersion="23"/>
 
-    <uses-permission android:name="android.permission.CAMERA" android:required="false"/>
-    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT" android:required="false"/>
 
     <application
             android:allowBackup="true"

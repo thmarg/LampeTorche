@@ -12,4 +12,6 @@
 
     <string name="btn_screen_text">экран</string>
 
+    <string name="no_flash">Все фонарики недоступны</string>
+
 </resources>

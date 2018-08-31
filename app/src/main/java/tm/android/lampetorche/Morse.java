@@ -45,16 +45,16 @@ import java.util.Hashtable;
  *
  *
  */
-public class Morse {
+class Morse {
     private final static int pointDelay=250;
 
     private final static int betweenPointOrTraitDelay =pointDelay;
     private final static int traitDelay=3*pointDelay;
-    public final static int betweenLetterDelay=3*pointDelay;
+    private final static int betweenLetterDelay=3*pointDelay;
     private final static int betweenWordDelay=7*pointDelay;
 
     private final static int[] masks={1,2,4,8,16,32,64,128};
-    private final static Hashtable<String, Byte> alphabet = new Hashtable<String,Byte>();
+    private final static Hashtable<String, Byte> alphabet = new Hashtable<>();
     // code morse représenté par 0 pour point et 1 pour trait plus 1 extra bit à 1 marquant le debut de la sequence.
     // S ...    1000 soit 8 en décimal.
     // O _ _ _  1111 soit 15 en décimal ...
@@ -71,15 +71,15 @@ public class Morse {
     /**
      * Call this void if no more renderer are available.
      */
-    public static void stop(){
+    static void stop(){
         stop=true;
         firstPass=true;
     }
 
     /**
-     * Call this void if some renderer is a available.
+     * Call this void if some renderer is available.
      */
-    public static void unstop(){
+    static void unstop(){
         stop=false;
     }
 
@@ -124,7 +124,7 @@ public class Morse {
      * @param action
      * @throws InterruptedException
      */
-    public static void doWords(String words, MorseAction action) throws InterruptedException{
+     static void doWords(String words, MorseAction action) throws InterruptedException{
         if (firstPass){
                 action.doAction(MorseAction.morseAction.SILENCE);
                 Thread.sleep(500);
