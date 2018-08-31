@@ -13,4 +13,6 @@
 
     <string name="btn_screen_text">Screen</string>
 
+    <string name="no_flash">All flashlight are unavailable</string>
+
 </resources>

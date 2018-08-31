@@ -8,6 +8,7 @@ package tm.android.lampetorche;
 
 
 import android.os.AsyncTask;
+import android.util.ArraySet;
 
 import java.util.ArrayList;
 
@@ -19,11 +20,11 @@ public class SosWorker extends AsyncTask<Void,Void,Void> implements MorseAction
 {
     private static  SosWorker _instance;
     private boolean run =true;
-    private ArrayList<MorseRenderer> renderers;
+    private ArraySet<MorseRenderer> renderers;
     private morseAction currentAction;
 
 private SosWorker(){
-    renderers = new ArrayList<>(2);
+    renderers = new ArraySet<>(2);
 }
 
     static SosWorker Instance(){
