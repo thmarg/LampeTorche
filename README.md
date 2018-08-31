@@ -1,7 +1,7 @@
 # LampeTorche
 ===========
 
-#### The goal of this Android application is to provide a simple flashlight for Android devices and no more.
+#### The goal of this Android application is to provide a simple flashlight for Android devices.
 <ul>
 
   <li>If the device has a camera with a flash you can use it as a flashlight . Simply push the toggle button "Flash off".
