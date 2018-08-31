@@ -1,7 +1,7 @@
 /*
  *  ScreenActivity
  *
- *  Copyright (c) 2014-2018 Thierry Margenstern under MIT license
+ *  Copyright (c) 2014 Thierry Margenstern under MIT license
  *  http://opensource.org/licenses/MIT
  */
 package tm.android.lampetorche;
@@ -27,7 +27,16 @@ public class ScreenActivity extends Activity  {
 		setContentView(R.layout.screenlayout);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON+WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		morseRenderer = new MorseRd();
+
 	}
+
+	
+	
+	
+	/*@Override
+    protected void onStart() {
+        super.onStart();
+   }*/
 
 	@Override
     protected void onResume() {
@@ -37,13 +46,31 @@ public class ScreenActivity extends Activity  {
 			SosWorker.Instance().addRenderer(morseRenderer);
 		 else
 			findViewById(R.id.llayout).setBackgroundColor(Color.WHITE);
+
     }
+
+	/*
+	@Override
+	protected void onPause() {
+		// Another activity is taking focus (this activity is about to be "paused").
+		super.onPause();
+	}
+	
+	@Override
+    protected void onStop() {
+		super.onStop();
+		
+			
+    }*/
+
+
 	
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		if (Torche.isModeSOS())
 			SosWorker.Instance().removeRenderer(morseRenderer);
+
 	}
 
 	/**
@@ -52,6 +79,8 @@ public class ScreenActivity extends Activity  {
 	 * because this o,Progress... void run on the UI thread, and Android UI is not thread safe.
 	 */
 	private class MorseRd implements MorseRenderer {
+
+
 		@Override
 		public void render(MorseAction.morseAction morseAction) {
 			switch (morseAction) {
