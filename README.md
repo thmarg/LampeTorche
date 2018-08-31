@@ -26,8 +26,8 @@
   
 ### Android version
 <ul>
-  <li> master branch:  Android API 14 up to 22 (Lollipop)<li>
-  <li> androidM branch:  Android API 23 (Marshmallow) and above, use camera2<li>
+  <li> master branch:  Android API 14 up to 22 (Lollipop)</li>
+  <li> androidM branch:  Android API 23 (Marshmallow) and above, use camera2</li>
   </ul>
 
 ### Installation
